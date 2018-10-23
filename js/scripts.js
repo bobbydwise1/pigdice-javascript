@@ -58,7 +58,11 @@ $(document).ready(function() {
     } else if (currentPlayer !== 2) {
       $("span#PlayerTwoScore").text(PlayerTwo);
     }
-
     $("span#DiceRoll").text("You chose to hold the dice: " + currentRoll)
+    if (PlayerOne >= 100) {
+    alert("Player One Wins!")
+    } else if (PlayerTwo >= 100){
+      alert("Player Two Wins!")
+    }
   })
 });
