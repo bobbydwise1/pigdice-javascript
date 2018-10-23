@@ -1,47 +1,51 @@
 // Business Logic
 
+var Player = {
+  playerNumber: 0,
+  playerScore: 0,
+}
+
+var gameInstance = {
+  currentPlayer: 1,
+  currentRoll: 0,
+  currentTurnScore: [],
+  addscore: 0
+}
+
 var PlayerOne = 0;
 var PlayerTwo = 0;
 var currentPlayer = 1;
 var currentRoll = 0;
 var currentTurnScore = [];
+var addscore = 0;
 
 var RollTheDice = function(){
   currentRoll = Math.floor((Math.random() * 6 + 1 ));
   if (currentRoll === 1 && currentPlayer === 1) {
     currentPlayer += 1;
     currentTurnScore = [];
-    console.log("Sorry, you rolled a one, next players turn");
   } else if (currentRoll === 1 && currentPlayer === 2) {
     currentPlayer -= 1;
     currentTurnScore = [];
-    console.log("Sorry, you rolled a one, next players turn");
   } else {
     currentTurnScore.push(currentRoll);
-    console.log("This is the current turn score: " + currentTurnScore);
-    console.log("This is the current roll: " + currentRoll);
     return currentRoll
   }
 };
 
 var HoldTheDice = function(){
-  console.log("This is Hold The Dice working.");
   if (currentPlayer === 1) {
-    PlayerOne += currentTurnScore.reduce((a, b) => a + b, 0);
-    console.log("Player One, you've chosen to hold the dice, here's your score: " + PlayerOne);
+    addscore = currentTurnScore.reduce((a, b) => a + b, 0)
+    PlayerOne += addscore;
     currentPlayer += 1;
     currentTurnScore = [];
   } else if (currentPlayer === 2){
-    PlayerTwo += currentTurnScore.reduce((a, b) => a + b, 0);
-    console.log("Player Two, you've chosen to hold the dice, here's your score: " + PlayerTwo);
+    addscore = currentTurnScore.reduce((a, b) => a + b, 0)
+    PlayerTwo += addscore;
     currentPlayer -= 1;
     currentTurnScore = [];
   }
 };
-
-var playerTurn = function(){
-
-}
 
 // UI Logic
 $(document).ready(function() {
@@ -55,10 +59,14 @@ $(document).ready(function() {
     HoldTheDice();
     if (currentPlayer !== 1) {
       $("span#PlayerOneScore").text(PlayerOne);
+      $("span#DiceRoll").text("Player One, you've chosen to hold the dice, you added " + addscore + " to your score.")
+      addscore = 0;
     } else if (currentPlayer !== 2) {
       $("span#PlayerTwoScore").text(PlayerTwo);
+      $("span#DiceRoll").text("Player Two, you've chosen to hold the dice, you added " + addscore + " to your score.")
+      addscore = 0;
     }
-    $("span#DiceRoll").text("You chose to hold the dice: " + currentRoll)
+
     if (PlayerOne >= 100) {
     alert("Player One Wins!")
     } else if (PlayerTwo >= 100){
