@@ -10,6 +10,16 @@
   </head>
   <body>
     <div class="container">
+
+      <div class="row">
+        <form id="PlayerName">
+          <label for="playerName1"><h3>Player 1, please input your name:</h3></label>
+          <input type="text" id="playerName1"></input><br>
+          <label for="playerName2"><h3>Player 2, please input your name:</h3></label>
+          <input type="text" id="playerName2"></input><br>
+          <button type="submit" name="playerName">Submit Name</button>
+        </form>
+      </div>
       <div class="row">
         <h1>PigDice Scoreboard:</h1>
         <p><h2>Player One: <span id="PlayerOneScore"></span></h2></p>
@@ -25,7 +35,6 @@
             <h4><span id="DiceRoll"></span></h4>
             <p></p>
             <p><button class="btn btn-danger" type="submit" name="DiceRoll">Roll the dice!</button></p>
-
           </form>
           <form id="HoldDice">
           <p><button class="btn btn-info" type="submit" name="HoldRoll">Hold the dice!</button></p>
