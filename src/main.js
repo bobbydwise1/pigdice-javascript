@@ -1,4 +1,5 @@
 import { PigDice } from './pigdice.js';
+import './styles.css';
 
 $(document).ready(function() {
   $("form#RollingDice").submit(function(event) {
