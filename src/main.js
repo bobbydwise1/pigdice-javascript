@@ -5,6 +5,7 @@ import { player1, player2, addscore, currentPlayer, currentRoll, RollTheDice, Ho
 import './styles.css';
 
 $(document).ready(function() {
+  debugger;
   $("form#RollingDice").submit(function(event) {
     event.preventDefault();
     RollTheDice();
