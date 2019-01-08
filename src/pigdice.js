@@ -21,9 +21,11 @@ export var RollTheDice = function(){
   if (currentRoll === 1 && currentPlayer === 1) {
     currentPlayer += 1;
     currentTurnScore = [];
+    return currentRoll;
   } else if (currentRoll === 1 && currentPlayer === 2) {
     currentPlayer -= 1;
     currentTurnScore = [];
+    return currentRoll;
   } else {
     currentTurnScore.push(currentRoll);
     return currentRoll;

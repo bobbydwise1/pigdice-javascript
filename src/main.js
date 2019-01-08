@@ -34,7 +34,7 @@ $(document).ready(function() {
     if (player1.playerScore >= 20) {
       alert("Player One, " + player1.playerName + ", Wins!");
     } else if (player2.playerScore >= 20){
-      alert("Player Two, " + player2.playerName + ", Wins!", );
+      alert("Player Two, " + player2.playerName + ", Wins!");
     }
   });
 });
