@@ -1,0 +1,25 @@
+{
+  "name": "PigDiceProject",
+  "version": "1.0.0",
+  "description": "#### This is Charley's Ping Pong generator",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glitchwizard/PigDiceProject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/glitchwizard/PigDiceProject/issues"
+  },
+  "homepage": "https://github.com/glitchwizard/PigDiceProject#readme",
+  "devDependencies": {
+    "webpack": "^4.0.1",
+    "webpack-cli": "^2.0.9"
+  },
+  "dependencies": {}
+}
