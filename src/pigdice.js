@@ -1,5 +1,4 @@
 // Business Logic
-
 export function Player(x) {
   this.playerName = x;
   this.playerNumber = 0;
@@ -44,5 +43,3 @@ export var HoldTheDice = function(){
     currentTurnScore = [];
   }
 };
-
-// UI Logic
