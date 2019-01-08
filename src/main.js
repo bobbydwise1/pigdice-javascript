@@ -1,11 +1,14 @@
-import { PigDice } from './pigdice.js';
+import $ from 'jquery';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { player1, player2, addscore, currentPlayer, currentRoll, RollTheDice, HoldTheDice } from './pigdice.js';
 import './styles.css';
 
 $(document).ready(function() {
   $("form#RollingDice").submit(function(event) {
     event.preventDefault();
     RollTheDice();
-    $("span#DiceRoll").text("This is what your rolled: " + currentRoll)
+    $("span#DiceRoll").text("This is what your rolled: " + currentRoll);
   });
 
   $("form#PlayerName").submit(function(event){
@@ -22,18 +25,18 @@ $(document).ready(function() {
     HoldTheDice();
     if (currentPlayer !== 1) {
       $("span#PlayerOneScore").text(player1.playerScore);
-      $("span#DiceRoll").text("Player One, you've chosen to hold the dice, you added " + addscore + " to your score.")
+      $("span#DiceRoll").text("Player One, you've chosen to hold the dice, you added " + addscore + " to your score.");
       addscore = 0;
     } else if (currentPlayer !== 2) {
       $("span#PlayerTwoScore").text(player2.playerScore);
-      $("span#DiceRoll").text("Player Two, you've chosen to hold the dice, you added " + addscore + " to your score.")
+      $("span#DiceRoll").text("Player Two, you've chosen to hold the dice, you added " + addscore + " to your score.");
       addscore = 0;
     }
 
     if (player1.playerScore >= 100) {
-    alert("Player One Wins!")
+      alert("Player One Wins!");
     } else if (player2.playerScore >= 100){
-      alert("Player Two Wins!")
+      alert("Player Two Wins!");
     }
-  })
+  });
 });
