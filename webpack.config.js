@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebPackPlugin = require('clean-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry:'./src/main.js',
@@ -9,6 +10,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   plugins: [
+    new UglifyJsPlugin(),
     new CleanWebPackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'Pig Dice',
