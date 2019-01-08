@@ -9,8 +9,12 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
+  devtool: 'eval-source-map',
+  devServer: {
+    contentBase: './dist'
+  },
   plugins: [
-    new UglifyJsPlugin(),
+    new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebPackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'Pig Dice',
