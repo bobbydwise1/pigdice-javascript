@@ -1,8 +1,8 @@
 # _PigDice Project_
 
-#### This is Charley's Ping Pong generator
+#### This is Charley's Pig Dice game, redone in Javascript and NPM webpack.
 
-#### By Charley McGowan and Marie Almquist
+#### By Charley McGowan, Marie Almquist, and Robert Lee.
 
 ## Description
 
@@ -37,6 +37,6 @@ No support for this.
 
 ### License
 
-*Copyright (c) 2018 // Charley McGowan*
+*Copyright (c) 2019 // Charley McGowan*
 
-Copyright (c) 2018 **Charley McGowan and Marie Almquist**
+Copyright (c) 2019 **Charley McGowan, Marie Almquist and Robert Lee.**
